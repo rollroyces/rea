@@ -527,6 +527,7 @@ jobs:
       - run: node scripts/build-windows-native.mjs --inspection-fixture
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: windows-native-inspection-fixture
           path: .cache/windows-native-inspection-fixture/
           if-no-files-found: error
@@ -542,11 +543,13 @@ jobs:
             tests/fixtures/windows/processBoundary.cc -ladvapi32
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: windows-process-boundary-fixture
           path: .cache/windows-process-boundary/
           if-no-files-found: error
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: windows-native-controls
           path: native/windows/build/
           if-no-files-found: error
@@ -846,6 +849,7 @@ jobs:
         run: git diff --exit-code
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
+          retention-days: 7
           name: generated-docs
           path: |
             docs/public/product-catalog.json
